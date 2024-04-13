@@ -6,22 +6,17 @@
         :style="!isOpen ? 'width: 0; overflow: hidden' : ''">Notify</label>
     </router-link>
     <router-link class="lenk" :to="{ name: 'favs' }">
-      <i v-badge.danger="totalFavs" class="pi pi-heart-fill p-overlay-badge text-red-400" style="font-size: 2rem"
-        id="cale" />
-      <label v-if="isOpen" for="cale" class="text-black-alpha-90"
-        :style="!isOpen ? 'width: 0; overflow: hidden' : ''">Cale</label>
+      <i v-badge.danger="totalFavs || '0'" class="pi pi-heart-fill p-overlay-badge text-red-400" style="font-size: 2rem"
+        id="favs" />
     </router-link>
     <router-link class="lenk" :to="{ name: 'cart' }">
       <i v-badge.info="total" class="pi pi-shopping-cart p-overlay-badge text-black-alpha-90" style="font-size: 2rem"
-        id="car" />
-      <label v-if="isOpen" for="cart" class="text-black-alpha-90"
-        :style="!isOpen ? 'width: 0; overflow: hidden' : ''">Cart</label>
+        id="cart" />
     </router-link>
     <router-link class="lenk" :to="{ name: 'sales' }">
       <AvatarC image="https://www.w3schools.com/howto/img_avatar.png" style="background-color: #2196f3; color: #ffffff"
         size="large" shape="circle" id="ava" />
-      <label v-if="isOpen" for="ava" class="text-black-alpha-90"
-        :style="!isOpen ? 'width: 0; overflow: hidden' : ''">David</label>
+
     </router-link>
     <a class="lenk" @click="toggle">
       <AvatarC :icon="isOpen ? 'pi pi-chevron-right' : 'pi pi-chevron-left'" size="large"
@@ -31,21 +26,16 @@
 </template>
 <script setup>
 
-import { ref } from 'vue';
+
 
 import useCart from '../composables/useCart';
 import useFavs from '../composables/useFavs';
 
-const isOpen = ref(false);
+
 
 const { total } = useCart();
 const { totalFavs } = useFavs();
 
-// pv.changeTheme('lara-light-purple', 'lara-dark-purple', 'id-to-link', () => {})
-
-const toggle = () => {
-  isOpen.value = !isOpen.value;
-}
 </script>
 <style scoped>
 .lenk {
@@ -64,5 +54,5 @@ const toggle = () => {
   border: 1px solid rgba(184, 184, 184, 0.3);
   background: #FFF;
   box-shadow: 5px 5px 20px 0px rgba(133, 133, 133, 0.20);
-}</style>
-  
+}
+</style>

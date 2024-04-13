@@ -2,7 +2,7 @@
 
 // }
 export const getTotal = (state) =>{
-    return state.products.length
+    return state.total
 }
 
 export const getCarts = (state) =>{

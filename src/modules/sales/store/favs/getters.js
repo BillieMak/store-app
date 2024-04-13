@@ -2,7 +2,7 @@
 
 // }
 export const getTotalFavs = (state) =>{
-    return state.favs.length
+    return state.total
 }
 
 export const getFavs = (state) =>{

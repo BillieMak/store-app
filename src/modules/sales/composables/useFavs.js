@@ -4,9 +4,7 @@ import { useStore } from "vuex"
 const useFavs = () => {
     const store = useStore();
 
-    const isFavorite = (item) =>{
-        return store.getters["favs/isFavorite"](item)
-    }
+    const isFavorite = (item) =>  store.getters["favs/isFavorite"](item);
 
     const totalFavs = computed(() => store.getters["favs/getTotalFavs"]);
 

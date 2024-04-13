@@ -3,4 +3,5 @@
 // })
 export default () => ({
     favs: [],
+    total: 0
 })
