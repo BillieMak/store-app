@@ -27,7 +27,8 @@ const useModal = () => {
     const { addToCart } = useCart()
 
     const onSave  = () => {
-        addToCart(product, quantity.value)
+        addToCart(product.value, quantity.value)
+        quantity.value = 0
         closeModal()
     }
 
