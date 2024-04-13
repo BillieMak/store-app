@@ -22,11 +22,13 @@
             </div>
         </template>
     </div>
+    <ModalCart />
 </template>
 <script setup>
 import { computed } from "vue";
 import useSale from "../composables/useSale";
 import CardItem from "../components/CardItem.vue";
+import ModalCart from '../components/ModalCart.vue';
 
 
 const { productsByCategory, category, searchProduct, search, filteredProducts} = useSale()

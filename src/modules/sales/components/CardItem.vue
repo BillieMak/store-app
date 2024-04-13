@@ -1,7 +1,6 @@
 <template>
     <div class="flex flex-column justify-content-center align-content-center bg-white p-4 w-11 overflow-hidden">
-        <ImageC class="img" :src="product.image" alt="Image" height="197"
-            style="max-width: 100%; max-height: 100%;" />
+        <ImageC class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
     </div>
     <div class=" h-full bg-gray-100 info w-full pt-2 px-4 flex flex-column align-items-start">
         <h3>{{ shortText(product.title, 20) }}</h3>
@@ -16,7 +15,7 @@
         <TagC :style="{ background: 'linear-gradient(-225deg,#AC32E4 0%,#7918F2 48%,#4801FF 100%)' }">
             <img alt="Country" src="https://cdn-icons-png.flaticon.com/512/197/197563.png" class="flag flag-it mr-1"
                 width="16" height="16" />
-            <span>Peru</span>
+            <span class="text-white">Peru</span>
         </TagC>
         <div class="px-3 align-self-end w-full flex flex-row justify-content-end align-items-center gap-2">
             <p class="price">₹{{ product.price }}</p>
@@ -25,12 +24,13 @@
                 @click="addFavs"></i>
         </div>
     </div>
+
 </template>
 <script setup>
 import { defineProps, toRefs } from 'vue';
 
-import useCart from '../composables/useCart';
 import useFavs from '../composables/useFavs';
+import useModal from '../composables/useModal';
 
 
 const props = defineProps({
@@ -41,15 +41,16 @@ const props = defineProps({
 })
 
 const { addToFavs, isFavorite, removeFavs } = useFavs()
-const { addToCart } = useCart()
+
 
 const { product } = toRefs(props)
 
+const { openModal, setProduct } = useModal()
+
 
 const addCart = () => {
-
-    const quantity = parseInt(prompt("Enter quantity"))
-    addToCart(product.value, quantity)
+    openModal()
+    setProduct(product.value)
 }
 
 
@@ -98,5 +99,4 @@ const addFavs = () => {
     font-size: 1.7rem;
     cursor: pointer;
 }
-
 </style>
