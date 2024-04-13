@@ -1,10 +1,10 @@
 <template>
-    <div class="flex flex-column justify-content-center align-content-center bg-white p-4 w-11 overflow-hidden">
+    <div class="flex flex-column justify-content-center align-content-center bg-white p-3 w-11 overflow-hidden">
         <ImageC class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
     </div>
-    <div class=" h-full bg-gray-100 info w-full pt-2 px-4 flex flex-column align-items-start">
-        <h3>{{ shortText(product.title, 20) }}</h3>
-        <p class="">{{ shortText(product.description, 30) }}</p>
+    <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
+        <h3 class="border-200">{{ shortText(product.title, 20) }}</h3>
+        <p >{{ shortText(product.description, 20) }}</p>
         <div class="flex justify-content-between align-items-center gap-3"> Colors:
             <div class="container-colors inline-flex flex-row w-min gap-2 align-items-center p-2">
                 <div v-for="color in product.colors" :key="color" class="circle" :style="'background-color:' + color">
