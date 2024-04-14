@@ -1,7 +1,6 @@
 <template>
     <div class="flex flex-column justify-content-center align-items-center gap-4 p-4">
-
-        <InputTextC type="text" class="text-search" v-model="search" placeholder="Search" @update:modelValue="onSearch" />
+        <InputTextC type="text" class="text-search" v-model="search" placeholder="Buscar Producto" @update:modelValue="onSearch" />
         <div>
             <button class="btn mr-5" :class="category == 1 ? 'active' : ''" @click="toggleCategory(1)">Electrics</button>
             <button class="btn mr-5" :class="category == 2 ? 'active' : ''" @click="toggleCategory(2)">Jewelery</button>
@@ -91,17 +90,14 @@ const onSearch = () => {
     box-shadow: 5px 5px 20px 4px rgba(133, 133, 133, 0.20);
 }
 
-
-
-
 .btn {
     display: inline-block;
     width: auto;
     height: 40px;
     padding: 0 20px;
     flex-shrink: 0;
-    border-radius: 30px;
-    border: 1px solid rgba(190, 190, 190, 0.50);
+    border-radius: 15px;
+    border: 1px solid #dadee3;
     background: #FFF;
     box-shadow: 5px 5px 20px 0px rgba(181, 181, 181, 0.20);
     color: #474747;
@@ -114,7 +110,6 @@ const onSearch = () => {
 }
 
 .active {
-    background: #e0e0e0;
-    box-shadow: 0 0 10px 2px #e0e0e0;
+    background: #dadee3;
 }
 </style>
