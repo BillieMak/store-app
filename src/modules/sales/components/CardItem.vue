@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-column justify-content-center align-content-center bg-white p-3 w-11 overflow-hidden">
-        <ImageC class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
+    <div class="flex flex-column justify-content-center bg-white p-1 w-30rem overflow-hidden">
+        <img class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
     </div>
     <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
         <h3 class="border-200">{{ shortText(product.title, 20) }}</h3>
@@ -73,8 +73,9 @@ const addFavs = () => {
     gap: 2px
 }
 
-.img {
-    object-fit: cover;
+.img { 
+    aspect-ratio: 1/1;
+    object-fit: contain;
 }
 
 .container-colors {
