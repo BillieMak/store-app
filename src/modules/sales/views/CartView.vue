@@ -1,7 +1,5 @@
 <template>
     <div class="flex justify-content-center w-full">
-
-
         <h1 v-if="carts.length == 0">Cart Empty please Select some Item</h1>
 
         <DataTableC v-else class="table mt-5" :value="carts" tableStyle="min-width: 50rem">
@@ -15,7 +13,6 @@
                     {{ data.item.title }}
                 </template>
             </ColumnC>
-
             <ColumnC header="Image">
                 <template #body="{ data }">
                     <img :src="data.item.image" :alt="data.image" class="w-6rem shadow-2 border-round" />
@@ -39,7 +36,6 @@
 
             <template #footer> In total there are {{ carts ? carts.length : 0 }} products. </template>
         </DataTableC>
-
     </div>
 </template>
 <script setup>
