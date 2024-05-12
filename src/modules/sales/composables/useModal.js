@@ -12,11 +12,11 @@ const useModal = () => {
     const product = computed(() => store.getters['modal/getProduct'])
 
     const openModal = () => store.commit('modal/openModal')
-    
+
     const clearProduct = () => store.commit('modal/clearProduct')
-    
+
     const setProduct = (product) => store.commit('modal/setProduct', product)
-    
+
     const closeModal = () => {
         clearProduct()
         store.commit('modal/closeModal')
@@ -26,10 +26,12 @@ const useModal = () => {
 
     const { addToCart } = useCart()
 
-    const onSave  = () => {
-        addToCart(product.value, quantity.value)
-        clearQuantity()
-        closeModal()
+    const onSave = () => {
+        setTimeout(() => {
+            addToCart(product.value, quantity.value)
+            clearQuantity()
+            closeModal()
+        }, 200)
     }
 
 

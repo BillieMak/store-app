@@ -11,6 +11,7 @@
             <SideBar/>
         </div>
     </div>
+    <ToastC />
 </template>
 <script setup>
 

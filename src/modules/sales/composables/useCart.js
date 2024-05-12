@@ -1,7 +1,10 @@
 import { computed } from "vue"
 import { useStore } from "vuex"
+import { useToast } from "primevue/usetoast"
 
 const useCart = () => {
+
+    const toast = useToast()
 
     const store = useStore()
 
@@ -11,6 +14,8 @@ const useCart = () => {
 
     const addToCart = (item, quantity) => {
         store.commit('cart/addToCart', {item, quantity})
+
+        toast.add({ severity: 'success', summary: 'Correct', detail: 'Product added', life: 2000 })
     }
 
 
