@@ -56,7 +56,7 @@
                 </div>
                 <div class="flex justify-content-end w-full gap-4 mt-4">
                     <router-link :to="{ name: 'sales' }" rel="noopener">
-                        <ButtonC label="Continue shopping" raised severity="info" icon="pi pi-arrow-left" />
+                        <ButtonC label="Continue shopping" class="bg-blue-600 border-blue-600" raised icon="pi pi-arrow-left" />
                     </router-link>
                 </div>
             </template>
