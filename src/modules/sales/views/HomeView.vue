@@ -1,6 +1,7 @@
 <template>
     <div class="flex flex-wrap justify-content-center gap-3">
-        <InputTextC type="text" class="text-search" v-model="search" placeholder="Buscar Producto" @update:modelValue="onSearch" />
+        <InputTextC type="text" class="text-search" v-model="search" placeholder="Buscar Producto"
+            @update:modelValue="onSearch" />
         <div class="flex flex-wrap justify-content-center align-items-center gap-3">
             <button class="btn" :class="category == 1 ? 'active' : ''" @click="toggleCategory(1)">Electrics</button>
             <button class="btn" :class="category == 2 ? 'active' : ''" @click="toggleCategory(2)">Jewelery</button>
@@ -10,14 +11,16 @@
     </div>
 
     <div class="flex flex-wrap justify-content-center align-items-center gap-4 p-3 w-screen md:w-full">
+        <!-- no products filter -->
         <template v-if="!filteredProducts.length || search.length === 0">
-            <div v-for="product in productsByCategory" :key="product.id" class="card sm:w-auto">
-                <CardItem :product="product"/>
+            <div v-for="product in productsByCategory" :key="product.id" class="card">
+                <CardItem :product="product" />
             </div>
         </template>
+        <!-- products filter -->
         <template v-else>
-            <div v-for="product in filteredProducts" :key="product.id" class="card sm:w-auto">
-                <CardItem :product="product"/>
+            <div v-for="product in filteredProducts" :key="product.id" class="card">
+                <CardItem :product="product" />
             </div>
         </template>
     </div>
@@ -30,7 +33,7 @@ import CardItem from "../components/home/CardItem.vue";
 import ModalCart from '../components/cart/ModalCart.vue';
 
 
-const { productsByCategory, category, searchProduct, search, filteredProducts} = useSale()
+const { productsByCategory, category, searchProduct, search, filteredProducts } = useSale()
 
 
 const shortText = (text, quantity) => {
@@ -64,7 +67,6 @@ const onSearch = () => {
 
 <style scoped>
 .text-search {
-
     width: 80%;
     padding-left: 20px;
     height: 55px;
