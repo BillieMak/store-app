@@ -10,7 +10,7 @@
         id="favs" />
     </router-link>
     <router-link class="lenk" :to="{ name: 'cart' }">
-      <i v-badge.info="total" class="pi pi-shopping-cart p-overlay-badge text-black-alpha-90" style="font-size: 2rem"
+      <i v-badge.info="totalCarts || '0'" class="pi pi-shopping-cart p-overlay-badge text-black-alpha-90" style="font-size: 2rem"
         id="cart" />
     </router-link>
     <router-link class="lenk" :to="{ name: 'sales' }">
@@ -32,7 +32,7 @@ import useFavs from '../composables/useFavs';
 
 const isOpen = ref(false);
 
-const { total } = useCart();
+const { total:totalCarts } = useCart();
 const { totalFavs } = useFavs();
 
 </script>

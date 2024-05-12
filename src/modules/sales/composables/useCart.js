@@ -17,12 +17,16 @@ const useCart = () => {
 
         toast.add({ severity: 'success', summary: 'Correct', detail: 'Product added', life: 2000 })
     }
+    const removeFromCart = (item) => {
+        store.commit('cart/removeFromCart', item)
+    }
 
 
     return {
         carts,
         total,
-        addToCart
+        addToCart,
+        removeFromCart,
     }
 }
 

@@ -17,11 +17,6 @@
                     <img :src="data.item.image" :alt="data.image" class="w-6rem img" />
                 </template>
             </ColumnC>
-            <ColumnC field="quantity" header="Cantidad">
-                <template #body="{ data }">
-                    {{ data.quantity }}
-                </template>
-            </ColumnC>
             <ColumnC field="price" header="Price">
                 <template #body="{ data }">
                     {{ data.item.price }}
@@ -30,6 +25,17 @@
             <ColumnC field="category" header="Category" class="showCell">
                 <template #body="{ data }">
                     {{ data.item.category }}
+                </template>
+            </ColumnC>
+            <ColumnC field="quantity" header="Cantidad">
+                <template #body="{ data }">
+                    <InputNumberC :inputStyle="{ width: '4rem' }" v-model="data.quantity" showButtons :min="0" />
+                    <!-- {{ data.quantity }} -->
+                </template>
+            </ColumnC>
+            <ColumnC header="Action">
+                <template #body="{ data }">
+                    <ButtonC icon="pi pi-trash" @click="removeFromCart(data)" severity="danger" />
                 </template>
             </ColumnC>
 
@@ -50,7 +56,7 @@
 import { computed } from 'vue';
 import useCart from '../composables/useCart';
 
-const { carts } = useCart();
+const { carts , removeFromCart} = useCart();
 
 function calcTotalPrice(carts) {
     let total = 0;
