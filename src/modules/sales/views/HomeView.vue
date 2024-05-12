@@ -10,7 +10,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap justify-content-center align-items-center gap-4 p-3 w-screen md:w-full">
+    <div class="flex flex-wrap justify-content-center align-items-center gap-7 p-4 w-screen md:w-full">
         <!-- no products filter -->
         <template v-if="!filteredProducts.length || search.length === 0">
             <div v-for="product in productsByCategory" :key="product.id" class="card">
