@@ -6,7 +6,7 @@
       <DataTableC v-else class="table mt-5" :value="favs" tableStyle="min-width: 50rem">
             <template #header>
                 <div class="flex flex-wrap align-items-center justify-content-between gap-2">
-                    <span class="text-xl text-900 font-bold">Products</span>
+                    <span class="text-xl text-900 font-semibold text-white">Favoritos</span>
                 </div>
             </template>
             <ColumnC field="title" header="Name"></ColumnC>
@@ -34,11 +34,3 @@ import useFavs from '../composables/useFavs';
 
 const { favs } = useFavs()
 </script>
-<style scoped>
-
-.table{
-    border-radius: 30px;
-    overflow: hidden;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-}
-</style>

@@ -14,12 +14,12 @@
 </div>
 <div class="flex justify-content-end gap-2">
     <ButtonC type="button"  label="Cancel" severity="secondary" @click="closeModal"></ButtonC>
-    <ButtonC type="button" label="Save" @click="onSave"></ButtonC>
+    <ButtonC :disabled="quantity === 0" type="button" label="Save" @click="onSave"></ButtonC>
 </div>
 </DialogC>
 </template>
 <script setup>
-import useModal from '../composables/useModal';
+import useModal from '../../composables/useModal';
 
 const { quantity, visible, closeModal, onSave } = useModal();
 

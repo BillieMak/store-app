@@ -15,6 +15,8 @@ const useSale = () => {
 
     const productsByTitle = computed(() => store.getters['sales/getProductoByTitle'](search.value))
 
+    const productById = (id) => computed(() => store.getters['sales/getProductById'](id))
+
     const searchProduct = () => {
         filteredProducts.value = productsByCategory.value.filter(({ title }) =>
             title.toLowerCase().includes(search.value.toLowerCase()) 
@@ -27,6 +29,8 @@ const useSale = () => {
     return {
         search,
         category,
+
+        productById,
         productsByTitle,
         filteredProducts,
         searchProduct,

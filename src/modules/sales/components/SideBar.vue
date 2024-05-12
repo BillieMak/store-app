@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-column gap-8 px-3 w-min mx-auto mt-8 py-7 bg-white fixed cuchichea">
+  <div class="hidden sm:flex flex-column gap-8 px-3 w-min mx-auto mt-8 py-7 bg-white fixed cuchichea">
     <router-link class="lenk" :to="{ name: 'sales' }">
       <i v-badge.info class="pi pi-bell p-overlay-badge text-black-alpha-90" style="font-size: 2rem" id="noti" />
       <label v-show="isOpen" for="noti" class="text-black-alpha-90"
@@ -25,13 +25,12 @@
   </div>
 </template>
 <script setup>
-
-
+import { ref } from 'vue';
 
 import useCart from '../composables/useCart';
 import useFavs from '../composables/useFavs';
 
-
+const isOpen = ref(false);
 
 const { total } = useCart();
 const { totalFavs } = useFavs();

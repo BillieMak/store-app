@@ -22,19 +22,18 @@ const useModal = () => {
         store.commit('modal/closeModal')
     }
 
-    const quantity = ref(0)
+    const quantity = ref(1)
 
     const { addToCart } = useCart()
 
     const onSave  = () => {
         addToCart(product.value, quantity.value)
-        quantity.value = 0
+        clearQuantity()
         closeModal()
     }
 
 
-    const clearQuantity = () => quantity.value = 0
-
+    const clearQuantity = () => quantity.value = 1
 
     return {
 

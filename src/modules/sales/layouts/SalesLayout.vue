@@ -1,14 +1,14 @@
 <template>
     <div class="grid">
-        <div class="col-11">
+        <div class="sm:col-12 md:col-11">
             <router-view v-slot="{ Component }">
                 <keep-alive>
                     <component :is="Component" :key="$route.name" />
                 </keep-alive>
             </router-view>
         </div>
-        <div class="col-1">
-            <SideBar />
+        <div class="sm:col-12 md:col-1 sm:hidden md:flex justify-content-center">
+            <SideBar/>
         </div>
     </div>
 </template>

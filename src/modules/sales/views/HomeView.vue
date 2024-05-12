@@ -1,23 +1,23 @@
 <template>
-    <div class="flex flex-column justify-content-center align-items-center gap-4 p-4">
+    <div class="flex flex-wrap justify-content-center gap-3">
         <InputTextC type="text" class="text-search" v-model="search" placeholder="Buscar Producto" @update:modelValue="onSearch" />
-        <div>
-            <button class="btn mr-5" :class="category == 1 ? 'active' : ''" @click="toggleCategory(1)">Electrics</button>
-            <button class="btn mr-5" :class="category == 2 ? 'active' : ''" @click="toggleCategory(2)">Jewelery</button>
-            <button class="btn mr-5" :class="category == 3 ? 'active' : ''" @click="toggleCategory(3)">Men's</button>
-            <button class="btn mr-5" :class="category == 4 ? 'active' : ''" @click="toggleCategory(4)">Women's</button>
+        <div class="flex flex-wrap justify-content-center align-items-center gap-3">
+            <button class="btn" :class="category == 1 ? 'active' : ''" @click="toggleCategory(1)">Electrics</button>
+            <button class="btn" :class="category == 2 ? 'active' : ''" @click="toggleCategory(2)">Jewelery</button>
+            <button class="btn" :class="category == 3 ? 'active' : ''" @click="toggleCategory(3)">Men's</button>
+            <button class="btn" :class="category == 4 ? 'active' : ''" @click="toggleCategory(4)">Women's</button>
         </div>
     </div>
 
-    <div class="flex w-full flex-wrap justify-content-center align-items-center pt-2 gap-7">
+    <div class="flex flex-wrap justify-content-around align-items-center gap-3 p-3 w-screen md:w-full">
         <template v-if="!filteredProducts.length || search.length === 0">
-            <div v-for="product in productsByCategory" :key="product.id" class="card">
-                <CardItem :product="product" />
+            <div v-for="product in productsByCategory" :key="product.id" class="card w-full border-1">
+                <CardItem :product="product"/>
             </div>
         </template>
         <template v-else>
-            <div v-for="product in filteredProducts" :key="product.id" class="card">
-                <CardItem :product="product" />
+            <div v-for="product in filteredProducts" :key="product.id" class="card w-full border-1">
+                <CardItem :product="product"/>
             </div>
         </template>
     </div>
@@ -26,8 +26,8 @@
 <script setup>
 import { computed } from "vue";
 import useSale from "../composables/useSale";
-import CardItem from "../components/CardItem.vue";
-import ModalCart from '../components/ModalCart.vue';
+import CardItem from "../components/home/CardItem.vue";
+import ModalCart from '../components/cart/ModalCart.vue';
 
 
 const { productsByCategory, category, searchProduct, search, filteredProducts} = useSale()

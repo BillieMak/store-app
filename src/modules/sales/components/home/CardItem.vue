@@ -1,10 +1,16 @@
 <template>
+
     <div class="flex flex-column justify-content-center bg-white p-1 w-30rem overflow-hidden">
         <img class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
     </div>
     <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
-        <h3 class="border-200">{{ shortText(product.title, 20) }}</h3>
-        <p >{{ shortText(product.description, 20) }}</p>
+        <h3 class="border-200">
+            <router-link class="text-black-alpha-90 no-underline"
+                :to="{ name: 'product', params: { id: product.id }, }">
+                {{ shortText(product.title, 20) }}
+            </router-link>
+        </h3>
+        <p>{{ shortText(product.description, 20) }}</p>
         <div class="flex justify-content-between align-items-center gap-3"> Colors:
             <div class="container-colors inline-flex flex-row w-min gap-2 align-items-center p-2">
                 <div v-for="color in product.colors" :key="color" class="circle" :style="'background-color:' + color">
@@ -21,7 +27,7 @@
             <p class="price">₹{{ product.price }}</p>
             <i class="pi pi-shopping-cart p-overlay-badge mr-2" @click="addCart"></i>
             <i class="pi p-overlay-badge" :class="isFavorite(product) ? 'pi-heart-fill text-red-400' : 'pi-heart'"
-                @click="addFavs"></i>
+                @click="addToFavs(product)"></i>
         </div>
     </div>
 
@@ -29,8 +35,8 @@
 <script setup>
 import { defineProps, toRefs } from 'vue';
 
-import useFavs from '../composables/useFavs';
-import useModal from '../composables/useModal';
+import useFavs from '../../composables/useFavs';
+import useModal from '../../composables/useModal';
 
 
 const props = defineProps({
@@ -40,30 +46,19 @@ const props = defineProps({
     }
 })
 
-const { addToFavs, isFavorite, removeFavs } = useFavs()
-
+const { addToFavs, isFavorite } = useFavs()
 
 const { product } = toRefs(props)
 
 const { openModal, setProduct } = useModal()
-
 
 const addCart = () => {
     openModal()
     setProduct(product.value)
 }
 
-
 const shortText = (text, quantity) => {
     return text.substring(0, quantity);
-}
-
-const addFavs = () => {
-    if (!isFavorite(product.value)) {
-        addToFavs(product.value)
-    } else {
-        removeFavs(product.value)
-    }
 }
 
 </script>
@@ -73,7 +68,7 @@ const addFavs = () => {
     gap: 2px
 }
 
-.img { 
+.img {
     aspect-ratio: 1/1;
     object-fit: contain;
 }

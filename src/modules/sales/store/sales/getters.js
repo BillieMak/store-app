@@ -5,6 +5,10 @@ export const getAllProductos = (state) => {
     return state.products
 }
 
+export const getProductById = (state) => (id) => {
+    return state.products.find((product) => product.id === id)
+}
+
 export const getElectronics = (state) => {
     return state.products.filter(({ category }) => category === 'electronics')
 }
