@@ -47,12 +47,14 @@
       </div>
       <div class="flex gap-4">
         <IconFieldC>
-          <InputIconC class="pi pi-calendar"> </InputIconC>
-          <InputTextC class="w-full" id="expiration-date" type="text" placeholder="Exiration Date" />
+          <InputIconC class="pi pi-calendar"></InputIconC>
+          <InputMaskC class="w-full" palceholder="dd/yy" mask="99/99" slotChar="dd/yy"
+            placeholder="Expiration date" />
         </IconFieldC>
         <IconFieldC>
           <InputIconC class="pi pi-lock"> </InputIconC>
-          <InputTextC class="w-full" id="security-code" type="text" placeholder="Security Code" />
+          <InputMaskC class="w-full" palceholder="123" mask="999" slotChar
+            placeholder="Security Code" />
         </IconFieldC>
       </div>
       <div>
