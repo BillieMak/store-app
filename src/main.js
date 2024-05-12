@@ -28,12 +28,16 @@ import InputIcon from 'primevue/inputicon'
 import InputMask from 'primevue/inputmask'
 import Rating from 'primevue/rating'
 import Tag from 'primevue/tag'
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
+
 //import components
 
 const app = createApp(App);
 app.use(store)
 app.use(router)
 app.use(PrimeVue, { ripple: true });
+app.use(ToastService);
 app.component('AvatarC', Avatar);
 app.component('ButtonC', Button);
 app.directive('badge', BadgeDirective);
@@ -50,5 +54,6 @@ app.component('IconFieldC', IconField);
 app.component('InputMaskC', InputMask);
 app.component('RatingC', Rating);
 app.component('TagC', Tag);
+app.component('ToastC', Toast);
 
 app.mount('#app')
