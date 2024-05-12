@@ -1,7 +1,7 @@
 <template>
 
-    <div class="flex flex-column justify-content-center bg-white p-1 w-30rem overflow-hidden">
-        <img class="img" :src="product.image" alt="Image" height="197" style="max-width: 100%; max-height: 100%;" />
+    <div class="flex flex-column justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
+        <img class="img max-w-full max-h-full" :src="product.image" alt="Image" width="197" height="197" />
     </div>
     <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
         <h3 class="border-200">
@@ -95,4 +95,5 @@ const shortText = (text, quantity) => {
     font-size: 1.7rem;
     cursor: pointer;
 }
+
 </style>

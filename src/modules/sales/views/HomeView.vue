@@ -11,12 +11,12 @@
 
     <div class="flex flex-wrap justify-content-around align-items-center gap-3 p-3 w-screen md:w-full">
         <template v-if="!filteredProducts.length || search.length === 0">
-            <div v-for="product in productsByCategory" :key="product.id" class="card w-full border-1">
+            <div v-for="product in productsByCategory" :key="product.id" class="card sm:w-auto">
                 <CardItem :product="product"/>
             </div>
         </template>
         <template v-else>
-            <div v-for="product in filteredProducts" :key="product.id" class="card w-full border-1">
+            <div v-for="product in filteredProducts" :key="product.id" class="card sm:w-auto">
                 <CardItem :product="product"/>
             </div>
         </template>
