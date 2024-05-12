@@ -1,7 +1,10 @@
 import { computed, ref } from 'vue';
 import useCart from './useCart';
+import { useToast } from 'primevue/usetoast';
 
 const usePayment = () => {
+
+    const toast = useToast();
 
     const regCupon = /^FREE-[1-3]{3}$/g
 
@@ -32,6 +35,7 @@ const usePayment = () => {
             discount.value = 100;
             couponApplied.value = cupon.value;
             cupon.value = '';
+            toast.add({ severity: 'success', summary: 'Cupon', detail: 'Cupon aplicado', life: 3000 });
         }
     }
 
