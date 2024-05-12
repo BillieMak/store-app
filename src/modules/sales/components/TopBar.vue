@@ -1,4 +1,4 @@
-<template> 
+<template>
     <div class="flex justify-content-between p-2 align-items-center gap-1 bg-white shadow-1 h-3rem">
         <div>
             <a href="https://www.youtube.com" target="_blank" rel="noopener">
@@ -14,6 +14,13 @@
                 <ButtonC icon="pi pi-whatsapp" class="text-green-500" text rounded aria-label="Whatsapp" />
             </a>
         </div>
-        <span class="end font-semibold">Click here for more</span>
+        <p class=" font-semibold ">Cupon code: <span class="cupon p-2 text-blue-50 border-round-md">FREE-123</span></p>
     </div>
 </template>
+
+<style scoped>
+.cupon {
+    background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%);
+
+}
+</style>
