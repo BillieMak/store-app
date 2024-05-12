@@ -21,7 +21,7 @@ const usePayment = () => {
         carts.forEach(({ item, quantity }) => {
             total += item.price * quantity;
         });
-        return total;
+        return parseFloat(+total.toFixed(2));
 
     }
 

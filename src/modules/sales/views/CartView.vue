@@ -29,7 +29,7 @@
             </ColumnC>
             <ColumnC field="quantity" header="Cantidad">
                 <template #body="{ data }">
-                    <InputNumberC :inputStyle="{ width: '4rem' }" v-model="data.quantity" showButtons :min="0" />
+                    <InputNumberC :inputStyle="{ width: '5rem' }" v-model="data.quantity" showButtons :min="0" />
                     <!-- {{ data.quantity }} -->
                 </template>
             </ColumnC>
@@ -63,7 +63,7 @@ function calcTotalPrice(carts) {
     carts.forEach(({ item, quantity }) => {
         total += item.price * quantity;
     });
-    return total;
+    return  parseFloat(+total.toFixed(2));
 }
 
 const totalMount = computed(() => {
