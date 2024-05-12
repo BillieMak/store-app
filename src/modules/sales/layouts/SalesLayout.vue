@@ -1,5 +1,8 @@
 <template>
-    <div class="grid">
+    <div class="absolute w-full top-0 left-0">
+        <TopBar />
+    </div>
+    <div class="grid mt-7">
         <div class="sm:col-12 md:col-11">
             <router-view v-slot="{ Component }">
                 <keep-alive>
@@ -15,9 +18,12 @@
 </template>
 <script setup>
 
-import { useRouter, useRoute } from 'vue-router';
-import SideBar from '../components/SideBar.vue'
 import { onMounted, watch } from 'vue';
+
+import { useRouter, useRoute } from 'vue-router';
+
+import SideBar from '../components/SideBar.vue'
+import TopBar from '../components/TopBar.vue'
 
 const router = useRouter();
 const route = useRoute();

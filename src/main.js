@@ -3,14 +3,18 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
+// primevue
+
 import 'primevue/resources/themes/aura-light-cyan/theme.css'
 import "primevue/resources/primevue.min.css";
 import "primeflex/primeflex.css";
 import 'primeicons/primeicons.css';
-// import "./modules/sales/themes/theme.css";
+
 
 import PrimeVue from 'primevue/config';
 
+// components primevue
 
 import Avatar from 'primevue/avatar'
 import BadgeDirective from 'primevue/badgedirective';
@@ -30,8 +34,6 @@ import Rating from 'primevue/rating'
 import Tag from 'primevue/tag'
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
-
-//import components
 
 const app = createApp(App);
 app.use(store)
