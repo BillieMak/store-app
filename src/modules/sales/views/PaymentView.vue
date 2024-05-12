@@ -40,7 +40,11 @@
               {{ data.item.category }}
             </template>
           </ColumnC>
-
+          <ColumnC header="Total">
+                <template #body="{ data }">
+                    {{ parseFloat((data.item.price * data.quantity).toFixed(2)) }}
+                </template>
+            </ColumnC>
           <template #footer>
             <div class="flex flex-wrap align-items-center justify-content-between">
               <InputTextC v-model="cupon" id="code-cupon" type="text" placeholder="Code Cupon" />

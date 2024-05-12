@@ -1,7 +1,7 @@
 <template>
-    <div class="flex justify-content-center w-screen sm:w-full">
+    <div class="flex flex-wrap justify-content-center w-screen sm:w-full">
         <h1 v-if="carts.length == 0">Cart Empty please Select some Item</h1>
-        <DataTableC v-else class="table mt-5" :value="carts">
+        <DataTableC v-else class="table mt-5 w-8" :value="carts">
             <template #header>
                 <div class="flex flex-wrap align-items-center justify-content-between gap-2">
                     <span class="text-xl text-900 font-semibold text-white">Products - Cart</span>
@@ -54,22 +54,28 @@
                             icon="pi pi-shopping-bag" />
                     </router-link>
                 </div>
+                <div class="flex justify-content-end w-full gap-4 mt-4">
+                    <router-link :to="{ name: 'sales' }" rel="noopener">
+                        <ButtonC label="Continue shopping" raised severity="info" icon="pi pi-arrow-left" />
+                    </router-link>
+                </div>
             </template>
         </DataTableC>
+
     </div>
 </template>
 <script setup>
 import { computed } from 'vue';
 import useCart from '../composables/useCart';
 
-const { carts , removeFromCart} = useCart();
+const { carts, removeFromCart } = useCart();
 
 function calcTotalPrice(carts) {
     let total = 0;
     carts.forEach(({ item, quantity }) => {
         total += item.price * quantity;
     });
-    return  parseFloat(+total.toFixed(2));
+    return parseFloat(+total.toFixed(2));
 }
 
 const totalMount = computed(() => {
@@ -79,9 +85,9 @@ const totalMount = computed(() => {
 </script>
 <style>
 .table {
-    border-radius: 11px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .p-datatable-header {

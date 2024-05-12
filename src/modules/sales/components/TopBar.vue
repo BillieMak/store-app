@@ -14,7 +14,7 @@
                 <ButtonC icon="pi pi-whatsapp" class="text-green-500" text rounded aria-label="Whatsapp" />
             </a>
         </div>
-        <p class=" font-semibold ">Cupon code: <span class="cupon p-2 text-blue-50 border-round-md">FREE-123</span></p>
+        <p class=" font-semibold "><i class="pi pi-megaphone"></i> Cupon code: <span class="cupon p-2 text-blue-50 border-round-md">FREE-123</span></p>
     </div>
 </template>
 
