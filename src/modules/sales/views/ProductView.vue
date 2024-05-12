@@ -1,9 +1,9 @@
 <template>
     <div class="grid h-screen">
-        <div class="sm:col-12 md:col-6 flex justify-content-center align-items-center border-1 m-auto">
+        <div class="sm:col-12 md:col-6 flex justify-content-center align-items-center m-auto">
             <img :src="product?.image" :alt="product?.title" class="w-20rem" />
         </div>
-        <div class="sm:col-12 md:col-6 p-4 lg:p-0 flex flex-column justify-content-center align-items-start gap-2 border-1">
+        <div class="sm:col-12 md:col-6 p-4 lg:p-0 flex flex-column justify-content-center align-items-start gap-2">
             <h1>{{ product?.title }}</h1>
             <div class="flex gap-3 align-items-center h-1rem">
                 <RatingC readonly :cancel="false" :modelValue="product?.rating.rate">

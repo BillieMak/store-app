@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-content-center w-screen sm:w-full border-1">
+    <div class="flex justify-content-center w-screen sm:w-full">
         <h1 v-if="carts.length == 0">Cart Empty please Select some Item</h1>
         <DataTableC v-else class="table mt-5" :value="carts">
             <template #header>

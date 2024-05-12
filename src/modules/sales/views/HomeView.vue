@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap justify-content-around align-items-center gap-3 p-3 w-screen md:w-full">
+    <div class="flex flex-wrap justify-content-center align-items-center gap-4 p-3 w-screen md:w-full">
         <template v-if="!filteredProducts.length || search.length === 0">
             <div v-for="product in productsByCategory" :key="product.id" class="card sm:w-auto">
                 <CardItem :product="product"/>
@@ -81,8 +81,8 @@ const onSearch = () => {
 }
 
 .card {
-    width: calc(518px - 50px);
-    height: calc(327px - 50px);
+    /* width: calc(518px - 50px);
+    height: calc(327px - 50px); */
     display: flex;
     overflow: hidden;
     border-radius: 30px;

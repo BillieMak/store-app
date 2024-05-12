@@ -1,12 +1,12 @@
 <template>
   <div class="grid">
-    <div class="md:col-5 border-1">
+    <div class="md:col-5">
       <h2 class="text-center">Complente sus Datos <i class="pi pi-truck"></i></h2>
       <div class="flex justify-content-center">
         <FormPayment />
       </div>
     </div>
-    <div class="md:col-7 border-2 p-4">
+    <div class="md:col-7 p-4">
       <h2>Resumen de compra <i class="pi pi-shop"></i></h2>
       <div class="card">
         <DataTableC class="shadow-1 mt-5" :value="carts">
