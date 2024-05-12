@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-wrap justify-content-center w-screen sm:w-full">
         <h1 v-if="carts.length == 0">Cart Empty please Select some Item</h1>
-        <DataTableC v-else class="table mt-5 w-8" :value="carts">
+        <DataTableC v-else class="table mt-5 w-11 sm:w-8" :value="carts">
             <template #header>
                 <div class="flex flex-wrap align-items-center justify-content-between gap-2">
                     <span class="text-xl text-900 font-semibold text-white">Products - Cart</span>

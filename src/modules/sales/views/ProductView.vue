@@ -1,5 +1,5 @@
 <template>
-    <div class="grid h-screen">
+    <div class="grid h-full">
         <div class="sm:col-12 md:col-6 flex justify-content-center align-items-center m-auto">
             <img :src="product?.image" :alt="product?.title" class="w-20rem" />
         </div>
@@ -39,26 +39,24 @@
                     <InputNumberC :inputStyle="{ width: '5rem' }" v-model="quantity" showButtons :min="0" />
                 </div>
 
-                <ButtonC label="Add to cart" 
-                :disabled="quantity === 0"
-                severity="success" icon="pi pi-shopping-cart" iconPos="left"
-                    @click="addItemToCart" />
+                <ButtonC label="Add to cart" :disabled="quantity === 0" severity="success" icon="pi pi-shopping-cart"
+                    iconPos="left" @click="addItemToCart" />
 
                 <ButtonC severity="danger" raised text rounded
                     :icon="isFavorite(product) ? 'pi pi-heart-fill' : 'pi pi-heart'" @click="addToFavs(product)"
                     iconPos="left" />
             </div>
-            <div class="flex justify-content-end w-full gap-4 mt-4">
-                <RouterLink :to="{ name: 'sales' }">
-                    <ButtonC label="Back" raised severity="info" icon="pi pi-arrow-left" iconPos="left" />
-                </RouterLink>
-
-                <router-link :to="total === 0 ? '' : { name: 'cart' }">
-                    <ButtonC label="Go to cart" :disabled="total === 0" raised severity="help" icon="pi pi-shopping-cart"
-                        iconPos="right" />
-                </router-link>
-            </div>
         </div>
+    </div>
+    <div class="flex justify-content-end w-full gap-4 mt-4">
+        <RouterLink :to="{ name: 'sales' }">
+            <ButtonC label="Back" raised severity="info" icon="pi pi-arrow-left" iconPos="left" />
+        </RouterLink>
+
+        <router-link :to="total === 0 ? '' : { name: 'cart' }">
+            <ButtonC label="Go to cart" :disabled="total === 0" raised severity="help" icon="pi pi-shopping-cart"
+                iconPos="right" />
+        </router-link>
     </div>
 </template>
 <script setup>
