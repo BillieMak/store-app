@@ -22,11 +22,13 @@
                 width="16" height="16" />
             <span class="text-white">Peru</span>
         </TagC>
-        <div class="px-3 align-self-end w-full flex flex-row justify-content-end align-items-center gap-2">
+        <div class="px-3 align-self-end w-full flex flex-row justify-content-between align-items-center gap-2">
             <p class="price">₹{{ product.price }}</p>
+         <div>
             <i class="pi pi-shopping-cart p-overlay-badge mr-2" @click="addCart"></i>
             <i class="pi p-overlay-badge" :class="isFavorite(product) ? 'pi-heart-fill text-red-400' : 'pi-heart'"
                 @click="addToFavs(product)"></i>
+         </div>
         </div>
     </div>
 
