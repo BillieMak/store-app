@@ -1,5 +1,4 @@
 <template>
-
     <div class="flex flex-column justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
         <img class="img max-w-full max-h-full" :src="product.image" alt="Image" width="197" height="197" />
     </div>
