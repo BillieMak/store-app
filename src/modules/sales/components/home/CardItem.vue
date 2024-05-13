@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-column justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
-        <img class="img max-w-full max-h-full" :src="product.image" alt="Image" width="197" height="197" />
+    <div class="flex justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
+        <img class="img max-w-full max-h-full m-auto" :src="product.image" alt="Image" width="197" height="197" />
     </div>
     <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
         <h3 class="border-200">
