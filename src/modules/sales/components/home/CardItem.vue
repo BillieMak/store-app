@@ -1,7 +1,6 @@
 <template>
-
-    <div class="flex flex-column justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
-        <img class="img max-w-full max-h-full" :src="product.image" alt="Image" width="197" height="197" />
+    <div class="flex justify-content-center bg-white p-1 sm:w-auto overflow-hidden">
+        <img class="img max-w-full max-h-full m-auto" :src="product.image" alt="Image" width="197" height="197" />
     </div>
     <div class="bg-gray-100 info px-4 flex flex-column align-items-start gap-0">
         <h3 class="border-200">
@@ -23,11 +22,13 @@
                 width="16" height="16" />
             <span class="text-white">Peru</span>
         </TagC>
-        <div class="px-3 align-self-end w-full flex flex-row justify-content-end align-items-center gap-2">
+        <div class="px-3 align-self-end w-full flex flex-row justify-content-between align-items-center gap-2">
             <p class="price">₹{{ product.price }}</p>
+         <div>
             <i class="pi pi-shopping-cart p-overlay-badge mr-2" @click="addCart"></i>
             <i class="pi p-overlay-badge" :class="isFavorite(product) ? 'pi-heart-fill text-red-400' : 'pi-heart'"
                 @click="addToFavs(product)"></i>
+         </div>
         </div>
     </div>
 

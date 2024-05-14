@@ -13,13 +13,13 @@
     <div class="flex flex-wrap justify-content-center align-items-center gap-7 p-4 w-screen md:w-full">
         <!-- no products filter -->
         <template v-if="!filteredProducts.length || search.length === 0">
-            <div v-for="product in productsByCategory" :key="product.id" class="card">
+            <div v-for="product in productsByCategory" :key="product.id" class="card w-11 sm:w-auto sm:flex">
                 <CardItem :product="product" />
             </div>
         </template>
         <!-- products filter -->
         <template v-else>
-            <div v-for="product in filteredProducts" :key="product.id" class="card">
+            <div v-for="product in filteredProducts" :key="product.id" class="card w-11 sm:w-auto sm:flex">
                 <CardItem :product="product" />
             </div>
         </template>
@@ -83,13 +83,10 @@ const onSearch = () => {
 }
 
 .card {
-    /* width: calc(518px - 50px);
-    height: calc(327px - 50px); */
-    display: flex;
     overflow: hidden;
     border-radius: 30px;
     background: #FFF;
-    box-shadow: 5px 5px 20px 4px rgba(133, 133, 133, 0.20);
+    box-shadow: 5px 5px 15px 4px rgba(133, 133, 133, 0.20);
 }
 
 .btn {
