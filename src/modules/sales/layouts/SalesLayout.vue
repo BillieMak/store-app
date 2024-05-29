@@ -18,26 +18,26 @@
 </template>
 <script setup>
 
-import { onMounted, watch } from 'vue';
+// import { onMounted, watch } from 'vue';
 
-import { useRouter, useRoute } from 'vue-router';
+// import { useRouter, useRoute } from 'vue-router';
 
 import SideBar from '../components/SideBar.vue'
 import TopBar from '../components/TopBar.vue'
 
-const router = useRouter();
-const route = useRoute();
+// const router = useRouter();
+// const route = useRoute();
 
 
-onMounted(() => {
-    router.push({ name: 'sales' });
-})
+// onMounted(() => {
+//     router.push({ name: 'sales' });
+// })
 
-watch(route, () => {
-    if (route.name === 'home') {
-        router.push({ name: 'sales' });
-    }
-})
+// watch(route, () => {
+//     if (route.name === 'home') {
+//         router.push({ name: 'sales' });
+//     }
+// })
 
 </script>
 <style scoped>

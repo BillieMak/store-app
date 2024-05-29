@@ -1,11 +1,12 @@
 import verifyId from '../guards/id-guard'
 
 export default {
+    path: '/',
     name: "home",
     component: () => import(/* webpackChunkName: "home" */ '../layouts/SalesLayout.vue'),
     children: [
         {
-            path: '/sales',
+            path: '/',
             name: 'sales',
             component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
         },
